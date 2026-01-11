@@ -1,38 +1,57 @@
-import Image from 'next/image'
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react'
+import { Button } from '@/components/ui/button'
 
 const Hero = () => {
   return (
-    <div className='grid-cols-2 grid grid-rows-2 gap-4 h-[80vh] items-center justify-items-center text-center mx-4 overflow-hidden'>
-
-      {/* Top Left - FRONTEND (Left to Right) - Pair 1 */}
-      <div>
-        <h1 className='text-9xl z-10 relative animate-pair-1-left-fast'>FRONTEND</h1>
+    <div className='flex gap-20 justify-start px-40 items-center'>
+      <div className="flex flex-col gap-10 justify-center">
+        <div className='p-3 bg-gray-400/10 w-fit rounded-md'>
+          <p className='text-gray-400'>Vincent Chaussepied</p>
+        </div>
+        <div>
+          <h1 className='text-6xl font-semibold'>FRONTEND</h1>
+          <h1 className='text-6xl font-semibold'>DEVELOPER</h1>
+        </div>
+        <div>
+          <p>Clean <span className='text-pink-500'>&lt;code&gt;</span>, responsive design, and accessible interfaces with modern web technologies.</p>
+          <p className='text-gray-400'>// So that your website works fast and at full capacity.</p>
+        </div>
+        <div className='flex gap-4'>
+          <Button variant={'default'} >
+            View Projects
+          </Button>
+          <Button variant={"outline"}  >
+            View My CV
+          </Button>
+        </div>
       </div>
-
-      {/* Top Right - UX/UI (Right to Left) - Pair 2 */}
-      <div>
-        <h1 className='text-9xl z-10 relative text-primary animate-pair-2-right-fast'>UX/UI</h1>
+      <div className='bg-gray-400/20 p-4 rounded-md'>
+      <div className='flex gap-2 justify-between mb-4 font-semibold'>
+        <h2>10 Projects</h2>
+        <h2>1,500 commits</h2>
       </div>
-
-      {/* Bottom Left - DESIGNER (Left to Right) - Pair 2 */}
-      <div>
-        <h1 className='text-9xl z-10 relative animate-pair-2-left-fast'>DESIGNER</h1>
+      <pre className="bg-slate-900 p-10 rounded font-mono text-sm">
+        <code>
+          <div className="text-gray-500">&lt;header&gt;</div>
+          <div className="text-gray-500">  &lt;div id="<span className="text-primary">coder</span>"&gt;</div>
+          <span className="text-gray-500">    &lt;h1&gt;</span><span className="text-purple-300">Technology Stack</span><span className="text-gray-500">&lt;/h1&gt;</span>
+          <div className="text-gray-500">    &lt;ul&gt;</div>
+            <span className="text-gray-500">      &lt;li&gt;</span><span className="text-pink-500">HTML</span><span className="text-gray-500">&lt;/li&gt;</span> <br/>
+            <span className="text-gray-500">      &lt;li&gt;</span><span className="text-pink-500">CSS</span><span className="text-gray-500">&lt;/li&gt;</span> <br/>
+            <span className="text-gray-500">      &lt;li&gt;</span><span className="text-pink-500">Tailwind CSS</span><span className="text-gray-500">&lt;/li&gt;</span><br/>
+            <span className="text-gray-500">      &lt;li&gt;</span><span className="text-pink-500">JavaScript</span><span className="text-gray-500">&lt;/li&gt;</span><br/>
+            <span className="text-gray-500">      &lt;li&gt;</span><span className="text-pink-500">TypeScript</span><span className="text-gray-500">&lt;/li&gt;</span><br/>
+            <span className="text-gray-500">      &lt;li&gt;</span><span className="text-pink-500">React.js</span><span className="text-gray-500">&lt;/li&gt;</span><br/>
+            <span className="text-gray-500">      &lt;li&gt;</span><span className="text-pink-500">Next.js</span><span className="text-gray-500">&lt;/li&gt;</span>
+          <div className="text-gray-500">    &lt;/ul&gt;</div>
+          <div className="text-gray-500">  &lt;/div&gt;</div>
+          <div className="text-gray-500">&lt;/header&gt;</div>
+        </code>
+      </pre>
+        {/* <Image src={HeroImage} width={300} height={400} alt='hero image' className='object-cover'/> */}
       </div>
-
-      {/* Bottom Right - DEVELOPER (Right to Left) - Pair 1 */}
-      <div>
-        <h1 className='text-9xl z-10 relative text-primary animate-pair-1-right-fast'>DEVELOPER</h1>
-      </div>
-
-      {/* Background Image */}
-      <Image
-        src="/image-hero.png"
-        alt="Hero Image"
-        width={1000}
-        height={1000}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] w-[60vw] sm:w-[70vw] md:w-[80vw] lg:w-[60vw] h-[40vw] sm:h-[30vw] md:h-[30vw] lg:h-[30vw] overflow-hidden"
-      />
     </div>
   )
 }
