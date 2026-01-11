@@ -8,8 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter-sans);
+  --font-mono: var(--font-jetBrains-mono);
+  --font-title: var(--font-merriweather);
+  --color-primary: #C6F135;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,188 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* 4-Word Animation Cycle - Total cycle: 28s (7s per word) */
+
+/* FRONTEND: 0-7s - Left to Right */
+@keyframes slide-word-1 {
+  0%, 3.57% {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  10.71%, 17.86% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  25%, 100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+/* UX/UI: 7-14s - Right to Left (starts when FRONTEND disappears) */
+@keyframes slide-word-2 {
+  0%, 28.57% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  32.14%, 35.71% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  39.29%, 46.43% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50%, 100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+/* DEVELOPER: 14-21s - Right to Left */
+@keyframes slide-word-3 {
+  0%, 53.57% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  57.14%, 60.71% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  64.29%, 71.43% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+/* DESIGNER: 21-28s - Left to Right (starts when DEVELOPER disappears) */
+@keyframes slide-word-4 {
+  0%, 78.57% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  82.14%, 85.71% {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  89.29%, 96.43% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+.animate-word-1 {
+  animation: slide-word-1 28s ease-out infinite;
+}
+
+.animate-word-2 {
+  animation: slide-word-2 28s ease-out infinite;
+}
+
+.animate-word-3 {
+  animation: slide-word-3 28s ease-out infinite;
+}
+
+.animate-word-4 {
+  animation: slide-word-4 28s ease-out infinite;
+}
+
+/* Faster version - 16s total cycle (4s per word) */
+@keyframes slide-word-1-fast {
+  0%, 6.25% {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  12.5%, 18.75% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  25%, 100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-word-2-fast {
+  0%, 25% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  31.25%, 37.5% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  43.75%, 50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  56.25%, 100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-word-3-fast {
+  0%, 50% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  56.25%, 62.5% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  68.75%, 75% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  81.25%, 100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-word-4-fast {
+  0%, 75% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  81.25%, 87.5% {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  93.75%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-word-1-fast {
+  animation: slide-word-1-fast 16s ease-out infinite;
+}
+
+.animate-word-2-fast {
+  animation: slide-word-2-fast 16s ease-out infinite;
+}
+
+.animate-word-3-fast {
+  animation: slide-word-3-fast 16s ease-out infinite;
+}
+
+.animate-word-4-fast {
+  animation: slide-word-4-fast 16s ease-out infinite;
 }
