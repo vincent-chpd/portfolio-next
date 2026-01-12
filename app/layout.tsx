@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Inter,  JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./_components/Header"; // add your header
 
-const inter = Inter({
-  variable: "--font-inter-sans",
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetBrains-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-ibm-mono",
 });
 
 export const metadata: Metadata = {
@@ -17,17 +15,14 @@ export const metadata: Metadata = {
   description: "Frontend Developer Portfolio",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${jetBrainsMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${ibmPlexMono.variable} antialiased `}>
+        <div className="grid grid-cols-[200px_1fr] h-[100vh]">
+          <Header />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

@@ -8,9 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter-sans);
-  --font-mono: var(--font-jetBrains-mono);
-  --font-title: var(--font-merriweather);
+  --font-mono: var(--font-ibm-mono);
   --color-primary: #C6F135;
 }
 
@@ -24,9 +22,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-ibm-mono), system-ui, monospace;
 }
 
 h1, h2, h3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: var(--font-ibm-mono), serif;
 }
