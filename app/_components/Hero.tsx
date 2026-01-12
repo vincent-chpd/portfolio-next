@@ -1,14 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/jsx-no-comment-textnodes */
 "use client"
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { useGitHubStats } from '../_hooks/useGitHubStats'
+import { CountingNumber } from './CountingNumber'
 
 const Hero = () => {
-  const { totalCommits, loading, error } = useGitHubStats();
+  const { totalCommits, repos, loading, error } = useGitHubStats();
 
-  if (loading) return <p>Loading GitHub data...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
@@ -35,8 +34,8 @@ const Hero = () => {
 
       <div className='bg-gray-800 p-8 rounded-md'>
         <div className='flex gap-2 justify-between items-center font-semibold mb-6'>
-          <h2>10 Projects</h2>
-          <h2>{totalCommits} commits</h2>
+          <h2>{loading ? <CountingNumber end={28} duration={2000} />  : repos.length} Projects</h2>
+          <h2>{loading ? <CountingNumber end={50} duration={8000} /> : totalCommits} commits</h2>
         </div>
         <pre className="bg-slate-900 p-16 rounded font-mono text-sm">
           <code className='text-lg'>
