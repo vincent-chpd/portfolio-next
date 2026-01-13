@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "./_components/Header"; // add your header
+import Navbar from "./_components/Navbar";
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-ibm-mono",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -18,9 +25,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} antialiased `}>
-        <div className="grid grid-cols-[200px_1fr] h-[100vh]">
-          <Header />
+      <body className={`${ibmPlexMono.variable} ${poppins.variable} antialiased`}>
+        <div className="">
+          <Navbar />
           <main>{children}</main>
         </div>
       </body>

@@ -11,7 +11,7 @@ const Hero = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className='flex gap-60 justify-start items-center h-[100vh]'>
+    <div className='flex gap-20 justify-start items-center h-[100vh] flex-wrap'>
       <div className="flex flex-col gap-10 justify-start">
         <div className='py-4 px-6 bg-gray-400/10 w-fit rounded-md text-lg'>
           <p className='text-primary/80 font-semibold'>Vincent Chaussepied</p>
@@ -34,8 +34,8 @@ const Hero = () => {
 
       <div className='bg-gray-800 p-8 rounded-md'>
         <div className='flex gap-2 justify-between items-center font-semibold mb-6'>
-          <h2>{loading ? <CountingNumber end={28} duration={2000} />  : repos.length} Projects</h2>
-          <h2>{loading ? <CountingNumber end={50} duration={8000} /> : totalCommits} commits</h2>
+          <h2 className="font-poppins">{loading ? <CountingNumber end={28} duration={2000} />  : repos.length} Projects</h2>
+          <h2>{loading ? <CountingNumber end={50} duration={4000} /> : totalCommits} commits</h2>
         </div>
         <pre className="bg-slate-900 p-16 rounded font-mono text-sm">
           <code className='text-lg'>

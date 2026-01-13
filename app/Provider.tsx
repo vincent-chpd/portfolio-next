@@ -1,12 +1,14 @@
 'use client';
 import React from 'react';
-import Header from './_components/Header';
+import Navbar from './_components/Navbar';
 
 const Provider = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <div>
-      <Header />
-      <div>{children}</div>
+      <Navbar />
+      <div>
+        {children}
+      </div>
     </div>
   );
 };
