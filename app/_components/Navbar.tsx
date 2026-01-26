@@ -1,12 +1,22 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Github, Linkedin, Menu, X } from 'lucide-react'
 import { useMobile } from '../_hooks/useMobile'
 
 const Navbar = () => {
   const isMobile = useMobile() // true if screen <= 768px
   const [menuOpen, setMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    // Show nothing during SSR to prevent hydration mismatch
+    return null
+  }
 
   const navLinks = [
     { name: "About", href: "/about" },
@@ -19,7 +29,7 @@ const Navbar = () => {
   // Desktop sidebar
   if (!isMobile) {
     return (
-      <nav className=" fixed flex flex-col items-center justify-between text-center p-4 bg-gray-800 text-foreground h-full">
+      <nav className="flex flex-col items-center justify-between text-center p-4 bg-gray-800 text-foreground h-screen sticky top-0">
         <Link href="/">
           <div className="border-6 p-3 border-primary rounded-2xl">
             <p className="text-4xl font-semibold font-poppins">VC</p>
@@ -47,7 +57,9 @@ const Navbar = () => {
 
   // Mobile top navbar with hamburger menu
   return (
-    <nav className="flex items-center justify-between px-4 py-2 bg-gray-800 text-foreground fixed w-full z-50">
+    <nav className="flex flex-col items-center justify-between px-4 py-2 bg-gray-800 text-foreground fixed w-full z-50">
+
+      <div className="flex items-center justify-between w-full">
       <Link href="/">
           <div className="border-4 py-1 px-2 border-primary rounded-xl">
             <p className="text-xl font-semibold font-poppins">VC</p>
@@ -55,11 +67,13 @@ const Navbar = () => {
         </Link>
 
       <button onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        {menuOpen ? <X size={32} /> : <Menu size={28} />}
       </button>
 
+      </div>
+
       {menuOpen && (
-        <div className="absolute top-full right-0 bg-gray-800 w-60 p-4 flex flex-col justify-center gap-4 shadow-lg h-[100vh]">
+        <div className=" top-full  bg-gray-800  p-4 flex flex-col justify-start m-20 gap-4 shadow-lg h-screen">
           <div className="flex flex-col gap-16 justify-between items-center">
             {navLinks.map(link => (
               <Link key={link.name} href={link.href} onClick={() => setMenuOpen(false)} className="text-lg font-semibold">
