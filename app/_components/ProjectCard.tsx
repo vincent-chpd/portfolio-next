@@ -1,4 +1,3 @@
-import Placeholder from '../../public/placeholder-project.jpg'
 import Image, { StaticImageData } from 'next/image'
 import { ExternalLink, GithubIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -27,7 +26,7 @@ const ProjectCard = ({title, description, image, url, techStacks}: ProjectCardPr
             <Link href={url} className="flex gap-1 items-center hover:text-primary" target="_blank" rel="noopener noreferrer">
               <Image
                 className="rounded-lg h-50 object-fill"
-                src={image || Placeholder}
+                src={image}
                 width={400}
                 height={ 100}
                 alt='Placeholder Image'

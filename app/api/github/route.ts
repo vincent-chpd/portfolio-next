@@ -91,6 +91,7 @@ export async function GET() {
 
     return NextResponse.json({ repos, totalCommits });
   } catch (error) {
+    console.error("Error fetching GitHub data:", error);
     return NextResponse.json({ error: "Failed to fetch GitHub data" }, { status: 500 });
   }
 }
