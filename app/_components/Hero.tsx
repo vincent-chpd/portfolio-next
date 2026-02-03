@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { useGitHubStats } from '../_hooks/useGitHubStats'
 import { CountingNumber } from './CountingNumber'
+import Link from 'next/link'
 
 const Hero = () => {
   const { totalCommits, repos, loading, error } = useGitHubStats();
@@ -23,12 +24,16 @@ const Hero = () => {
           <p className=' text-foreground text-xl'>Clean <span className='text-pink-500'>&lt;code&gt;</span>, responsive design, and accessible interfaces with modern web technologies for smooth user experiences.</p>
         </div>
         <div className='flex flex-col gap-4 md:flex-row'>
-          <Button className="text-xl py-6 px-7 border border-primary" variant={'default'} >
-            View Projects
-          </Button>
-          <Button className="text-xl py-6 px-7" variant={"outline"} >
-            <a href='https://docs.google.com/document/d/1ELBSOIobeP6mTrUlhJIIvRiuEHv_zDCliAqngdN0gss/edit?usp=drive_link' target="_blank">View My CV</a>
-          </Button>
+          <Link href='/projects'>
+            <Button className="text-xl py-6 px-7 border border-primary" variant={'default'} >
+              View Projects
+            </Button>
+          </Link>
+          <Link href='https://docs.google.com/document/d/1ELBSOIobeP6mTrUlhJIIvRiuEHv_zDCliAqngdN0gss/edit?usp=sharing' target="_blank">
+            <Button className="text-xl py-6 px-7" variant={"outline"} >
+              View My CV
+            </Button>
+          </Link>
         </div>
       </div>
 
