@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const AboutPage = () => {
@@ -11,9 +12,11 @@ const AboutPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <h2 className="text-2xl font-semibold mb-10">Who I am</h2>
-          <p>My name is Vincent and I am a front-end developer with 2+ years of experience. i build responsive, accessible, and performance-focused web applications mainly using React, TypeScript, and modern CSS. I enjoy taking ownership of features from design to production, from designing reusable UI components to integrating APIs and refactoring legacy code. I thrive in fast-paced startup environments, collaborating with designers, back-end developers, and cross-functional teams to deliver high-quality, user-focused digital products. My focus is on creating interfaces that look great, perform reliably, and provide a smooth user experience, while continuously learning and improving my skills.</p><br/>
-
-<p>When I’m not coding, you’ll usually find me running, cycling, or going on long walks with my corgi, Luffy, who keeps me on my toes and makes sure I never sit still for too long.</p>
+          <div className="flex flex-col items-center gap-4">
+            <Image src={"/avatar.jpeg"} alt="Profile Picture" width={200} height={200} className="rounded-full my-10"/>
+            <p>My name is Vincent and I am a front-end developer with 2+ years of experience. i build responsive, accessible, and performance-focused web applications mainly using React, TypeScript, and modern CSS. I enjoy taking ownership of features from design to production, from designing reusable UI components to integrating APIs and refactoring legacy code. I thrive in fast-paced startup environments, collaborating with designers, back-end developers, and cross-functional teams to deliver high-quality, user-focused digital products. My focus is on creating interfaces that look great, perform reliably, and provide a smooth user experience, while continuously learning and improving my skills.</p><br/>
+            <p>When I’m not coding, you’ll usually find me running, cycling, or going on long walks with my corgi, Luffy, who keeps me on my toes and makes sure I never sit still for too long.</p>
+          </div>
         </div>
 
         <div >

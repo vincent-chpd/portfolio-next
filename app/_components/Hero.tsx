@@ -26,8 +26,8 @@ const Hero = () => {
           <Button className="text-xl py-6 px-7 border border-primary" variant={'default'} >
             View Projects
           </Button>
-          <Button className="text-xl py-6 px-7" variant={"outline"}  >
-            View My CV
+          <Button className="text-xl py-6 px-7" variant={"outline"} >
+            <a href='https://docs.google.com/document/d/1ELBSOIobeP6mTrUlhJIIvRiuEHv_zDCliAqngdN0gss/edit?usp=drive_link' target="_blank">View My CV</a>
           </Button>
         </div>
       </div>
