@@ -23,7 +23,7 @@ const Navbar = () => {
     { name: "Projects", href: "/projects" },
     { name: "Services", href: "/services" },
     { name: "Recommendations", href: "/recommendations" },
-    { name: "Contact", href: "/" },
+    { name: "Contact", href: "/contact" },
   ]
 
   // Desktop sidebar

@@ -16,7 +16,7 @@ export interface GitHubStats {
 }
 
 const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
-const token = process.env.GITHUB_TOKEN; // server-side only, never exposed to browser
+const token = process.env.GITHUB_TOKEN;
 
 async function fetchPaginated<T>(url: string, token: string): Promise<T[]> {
   let results: T[] = [];
