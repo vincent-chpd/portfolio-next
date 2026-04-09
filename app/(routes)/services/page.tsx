@@ -1,5 +1,5 @@
-import React from 'react'
-import { Code2, Layers, Globe, Palette, Zap, RefreshCw } from 'lucide-react'
+import React from "react";
+import { Code2, Layers, Globe, Palette, Zap, RefreshCw } from "lucide-react";
 
 const services = [
   {
@@ -44,24 +44,26 @@ const services = [
       "Modernising legacy JavaScript codebases by migrating to TypeScript, improving code structure, and introducing testing. I reduce technical debt without disrupting your existing product.",
     tags: ["JavaScript → TypeScript", "Testing", "Code Quality", "Maintenance"],
   },
-]
+];
 
 const ServicesPage = () => {
   return (
-    <div className="mx-10 py-20 md:px-20 flex flex-col gap-10 mb-6">
+    <div className="px-4 py-16 md:px-10 lg:px-20 flex flex-col gap-10 mb-6">
       <div>
         <p className="text-gray-400 font-semibold">
           Home <span className="text-primary/50">_services</span>
         </p>
-        <h1 className="font-bold text-5xl mt-10">Services</h1>
+        <h1 className="font-bold text-4xl md:text-5xl mt-10">Services</h1>
         <p className="text-gray-400 mt-4 max-w-2xl">
-          I offer a range of front-end development services for startups, agencies, and individuals. Whether you need a full product built or a specific problem solved, I can help.
+          I offer a range of front-end development services for startups,
+          agencies, and individuals. Whether you need a full product built or a
+          specific problem solved, I can help.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {services.map((service) => {
-          const Icon = service.icon
+          const Icon = service.icon;
           return (
             <div
               key={service.title}
@@ -71,7 +73,9 @@ const ServicesPage = () => {
                 <Icon size={22} />
               </div>
               <h2 className="font-semibold text-lg">{service.title}</h2>
-              <p className="text-gray-400 text-sm leading-relaxed flex-1">{service.description}</p>
+              <p className="text-gray-400 text-sm leading-relaxed flex-1">
+                {service.description}
+              </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {service.tags.map((tag) => (
                   <span
@@ -83,24 +87,28 @@ const ServicesPage = () => {
                 ))}
               </div>
             </div>
-          )
+          );
         })}
       </div>
 
-      <div className="bg-gray-800 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-4">
+      <div className="bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-4 text-center md:text-left">
         <div>
-          <h3 className="font-semibold text-xl mb-2">Have a project in mind?</h3>
-          <p className="text-gray-400 text-sm">Let's talk about what you need and how I can help.</p>
+          <h3 className="font-semibold text-xl mb-2">
+            Have a project in mind?
+          </h3>
+          <p className="text-gray-400 text-sm">
+            Let&apos;s talk about what you need and how I can help.
+          </p>
         </div>
         <a
-          href="mailto:vincent.chaussepied@gmail.com"
-          className="shrink-0 bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary/80 transition-colors"
+          href="/contact"
+          className="shrink-0 bg-primary text-black font-semibold px-6 py-3 rounded-xl hover:bg-primary/80 transition-colors"
         >
           Get in touch
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ServicesPage
+export default ServicesPage;

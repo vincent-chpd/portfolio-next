@@ -1,6 +1,6 @@
-"use client"
-import React from 'react'
-import { ArrowRight } from 'lucide-react'
+"use client";
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
 const CTAButton = () => {
   return (
@@ -35,7 +35,8 @@ const CTAButton = () => {
         }
 
         @keyframes pulseScale {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
             opacity: 1;
           }
@@ -46,7 +47,7 @@ const CTAButton = () => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default CTAButton
+export default CTAButton;

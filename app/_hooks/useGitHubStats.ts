@@ -1,6 +1,6 @@
-"use client"
-import {GitHubStats} from '../api/github/route'
-import {Repo} from '../api/github/route'
+"use client";
+import { GitHubStats } from "../api/github/route";
+import { Repo } from "../api/github/route";
 import { useEffect, useState } from "react";
 
 export function useGitHubStats(): GitHubStats {

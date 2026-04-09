@@ -22,13 +22,19 @@ export const metadata: Metadata = {
   description: "Frontend Developer Portfolio",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} ${poppins.variable} antialiased`}>
-        <div className="flex ">
+      <body
+        className={`${ibmPlexMono.variable} ${poppins.variable} antialiased`}
+      >
+        <div className="flex min-h-screen">
           <Navbar />
-          <main>{children}</main>
+          <main className="flex-1 min-w-0 overflow-x-hidden">{children}</main>
         </div>
       </body>
     </html>

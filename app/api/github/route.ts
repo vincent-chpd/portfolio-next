@@ -47,14 +47,17 @@ async function fetchPaginated<T>(url: string, token: string): Promise<T[]> {
 
 export async function GET() {
   if (!username || !token) {
-    return NextResponse.json({ error: "Missing environment variables" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Missing environment variables" },
+      { status: 500 },
+    );
   }
 
   // Manually specify which repos to count commits from
   const REPOS_TO_COUNT = [
-    'portfolio-next',
-    'property-listing--react',
-    'react--pokemon-card-app',
+    "portfolio-next",
+    "property-listing--react",
+    "react--pokemon-card-app",
     "react--todo-app",
     "react--quiz-app",
   ];
@@ -63,7 +66,7 @@ export async function GET() {
     // 1️⃣ Fetch all repos (for display)
     const reposData: any[] = await fetchPaginated(
       `https://api.github.com/users/${username}/repos?type=owner`,
-      token
+      token,
     );
 
     const repos: Repo[] = reposData.map((repo) => ({
@@ -75,8 +78,8 @@ export async function GET() {
     }));
 
     // 2️⃣ Filter only the repos you want to count
-    const reposToCount = reposData.filter(repo =>
-      REPOS_TO_COUNT.includes(repo.name)
+    const reposToCount = reposData.filter((repo) =>
+      REPOS_TO_COUNT.includes(repo.name),
     );
 
     // 3️⃣ Fetch commits only for selected repos
@@ -84,7 +87,7 @@ export async function GET() {
     for (const repo of reposToCount) {
       const commits: any[] = await fetchPaginated(
         `https://api.github.com/repos/${username}/${repo.name}/commits?author=${username}`,
-        token
+        token,
       );
       totalCommits += commits.length;
     }
@@ -92,6 +95,9 @@ export async function GET() {
     return NextResponse.json({ repos, totalCommits });
   } catch (error) {
     console.error("Error fetching GitHub data:", error);
-    return NextResponse.json({ error: "Failed to fetch GitHub data" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch GitHub data" },
+      { status: 500 },
+    );
   }
 }
