@@ -56,7 +56,7 @@ const ContactPage = () => {
   return (
     <div className="px-4 py-16 md:px-10 lg:px-20 flex flex-col gap-10 mb-6">
       {/* Header */}
-      <div>
+      <div className="animate-fade-up delay-100">
         <p className="text-gray-400 font-semibold">
           Home <span className="text-primary/50">_contact</span>
         </p>
@@ -67,7 +67,7 @@ const ContactPage = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="animate-fade-up delay-200 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left — contact details */}
         <div className="flex flex-col gap-4">
           <div className="bg-gray-800 rounded-2xl p-6 flex flex-col gap-4">

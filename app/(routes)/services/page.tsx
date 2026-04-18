@@ -49,7 +49,7 @@ const services = [
 const ServicesPage = () => {
   return (
     <div className="px-4 py-16 md:px-10 lg:px-20 flex flex-col gap-10 mb-6">
-      <div>
+      <div className="animate-fade-up delay-100">
         <p className="text-gray-400 font-semibold">
           Home <span className="text-primary/50">_services</span>
         </p>
@@ -61,7 +61,7 @@ const ServicesPage = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="animate-fade-up delay-200 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {services.map((service) => {
           const Icon = service.icon;
           return (
@@ -91,7 +91,7 @@ const ServicesPage = () => {
         })}
       </div>
 
-      <div className="bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-4 text-center md:text-left">
+      <div className="animate-fade-up delay-300 bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-4 text-center md:text-left">
         <div>
           <h3 className="font-semibold text-xl mb-2">
             Have a project in mind?

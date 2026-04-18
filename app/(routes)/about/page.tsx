@@ -24,42 +24,37 @@ const AboutPage = () => {
   return (
     <div className="px-4 py-16 md:px-10 lg:px-20 flex flex-col gap-12 mb-6">
       {/* Breadcrumb */}
-      <div>
+      <div className="animate-fade-up delay-100">
         <p className="text-gray-400 font-semibold">
           Home <span className="text-primary/50">_about</span>
         </p>
       </div>
 
       {/* 2-column layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="animate-fade-up delay-200 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left — Who I am */}
         <div className="flex flex-col gap-8">
           <h2 className="text-2xl font-semibold">Who I am</h2>
 
-          <div>
-            <div className="float-left mr-6 mb-4">
-              <div className="w-44 h-44 sm:w-56 sm:h-56 rounded-2xl overflow-hidden ring-2 ring-primary">
-                <Image
-                  src={MeLuffy}
-                  alt="Vincent Chaussepied"
-                  width={224}
-                  height={224}
-                  className="object-cover w-full h-full"
-                />
-              </div>
+          <div className="flex flex-col gap-5">
+            <div className="w-full aspect-4/3 rounded-2xl overflow-hidden ring-2 ring-primary">
+              <Image
+                src={MeLuffy}
+                alt="Vincent Chaussepied"
+                width={224}
+                height={224}
+                className="object-cover w-full h-full"
+              />
             </div>
-            <div className="flex flex-col gap-4">
-              <p className="text-gray-300 leading-relaxed text-md">
-                I&apos;m Vincent, a front-end developer with{" "}
-                {new Date().getFullYear() - 2024}+ years of experience who made
-                the jump into tech after several years working in corporate
-                events. That world taught me how to stay organised, handle
-                chaos, and keep things running smoothly even when everything is
-                happening at once — which turns out to be surprisingly useful
-                when working with code.
-              </p>
-              <br />
-            </div>
+            <p className="text-gray-300 leading-relaxed text-md">
+              I&apos;m Vincent, a front-end developer with{" "}
+              {new Date().getFullYear() - 2024}+ years of experience who made
+              the jump into tech after several years working in corporate
+              events. That world taught me how to stay organised, handle
+              chaos, and keep things running smoothly even when everything is
+              happening at once — which turns out to be surprisingly useful
+              when working with code.
+            </p>
             <p className="text-gray-300 leading-relaxed text-md">
               Now I spend my time building responsive, accessible, and
               performance-focused web applications using React, TypeScript, and
@@ -67,13 +62,11 @@ const AboutPage = () => {
               whether that means building reusable UI components, connecting
               APIs, or cleaning up legacy code so it behaves itself.
             </p>
-            <br />
             <p className="text-gray-300 leading-relaxed text-md">
               I work best in fast-paced environments where I can collaborate
               with designers, back-end developers, and the wider team to deliver
               something that actually works well and feels good to use.
             </p>
-            <br />
             <p className="text-gray-400 leading-relaxed text-md">
               Outside of work I run, cycle, and go on long walks with my corgi,
               Luffy, who believes every outing should be slightly longer than

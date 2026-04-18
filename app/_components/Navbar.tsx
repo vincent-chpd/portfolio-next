@@ -64,7 +64,7 @@ const Navbar = () => {
 
   // Mobile top navbar with hamburger menu
   return (
-    <nav className="flex flex-col items-center justify-between px-4 py-2 bg-gray-800 text-foreground fixed w-full z-50">
+    <nav className="flex flex-col items-center justify-between px-4 py-3 bg-gray-800 text-foreground fixed w-full z-50 top-0 left-0">
       <div className="flex items-center justify-between w-full">
         <Link href="/">
           <div className="border-4 py-1 px-2 border-primary rounded-xl">
@@ -78,8 +78,8 @@ const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <div className=" top-full  bg-gray-800  p-4 flex flex-col justify-start m-20 gap-4 shadow-lg h-screen">
-          <div className="flex flex-col gap-16 justify-between items-center">
+        <div className="w-full bg-gray-800 p-6 flex flex-col justify-start gap-4 shadow-lg">
+          <div className="flex flex-col gap-8 justify-between items-center">
             {navLinks.map((link) => (
               <Link
                 key={link.name}

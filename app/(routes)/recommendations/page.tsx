@@ -29,7 +29,7 @@ const RecommendationsPage = () => {
   return (
     <div className="px-4 py-16 md:px-10 lg:px-20 flex flex-col gap-12 mb-6">
       {/* Header */}
-      <div>
+      <div className="animate-fade-up delay-100">
         <p className="text-gray-400 font-semibold">
           Home <span className="text-primary/50">_recommendations</span>
         </p>
@@ -42,7 +42,7 @@ const RecommendationsPage = () => {
       </div>
 
       {/* Profile banner */}
-      <div className="bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden">
+      <div className="animate-fade-up delay-200 bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden">
         {/* Decorative background quote */}
         <span className="absolute -top-4 -right-4 text-[10rem] leading-none font-serif text-primary/5 select-none pointer-events-none">
           &ldquo;
@@ -90,7 +90,7 @@ const RecommendationsPage = () => {
       </div>
 
       {/* Cards */}
-      <div className="flex flex-col gap-6">
+      <div className="animate-fade-up delay-300 flex flex-col gap-6">
         {recommendations.map((rec) => (
           <div
             key={rec.name}
