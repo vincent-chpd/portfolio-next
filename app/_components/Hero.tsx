@@ -18,8 +18,11 @@ const Hero = () => {
         </div>
         <div className="animate-fade-up delay-200 text-foreground w-full">
           <h1 className="text-[36px] sm:text-[52px] md:text-[72px] lg:text-[92px] text-center md:text-left font-bold leading-none">
-            FRONT-END DEVELOPER
+            SOFTWARE DEVELOPER
           </h1>
+          <p className="text-gray-400 text-sm mt-3 text-center md:text-left">
+            Specialising in <span className="text-primary">frontend</span> — React, Next.js, TypeScript, and modern web technologies.
+          </p>
         </div>
         <div className="animate-fade-up delay-300 w-full text-center md:text-left">
           <p className="text-foreground text-base sm:text-xl">
@@ -75,39 +78,39 @@ const Hero = () => {
           <code className="text-sm">
             <div className="text-gray-500">&lt;header&gt;</div>
             <div className="text-gray-500">
-              {" "}
+              {"  "}
               &lt;div id="<span className="text-primary">coder</span>"&gt;
             </div>
-            <span className="text-gray-500"> &lt;h1&gt;</span>
+            {"   "}<span className="text-gray-500">&lt;h1&gt;</span>
             <span className="text-purple-300">Technology Stack</span>
             <span className="text-gray-500">&lt;/h1&gt;</span>
-            <div className="text-gray-500"> &lt;ul&gt;</div>
-            <span className="text-gray-500"> &lt;li&gt;</span>
+            <div className="text-gray-500">{"   "}&lt;ul&gt;</div>
+            {"    "}<span className="text-gray-500"> &lt;li&gt;</span>
             <span className="text-pink-500">HTML</span>
             <span className="text-gray-500">&lt;/li&gt;</span> <br />
-            <span className="text-gray-500"> &lt;li&gt;</span>
+            {"    "}<span className="text-gray-500"> &lt;li&gt;</span>
             <span className="text-pink-500">Tailwind / CSS / SCSS</span>
             <span className="text-gray-500">&lt;/li&gt;</span> <br />
-            <span className="text-gray-500"> &lt;li&gt;</span>
+            {"    "}<span className="text-gray-500"> &lt;li&gt;</span>
             <span className="text-pink-500">JavaScript / TypeScript</span>
             <span className="text-gray-500">&lt;/li&gt;</span>
             <br />
-            <span className="text-gray-500"> &lt;li&gt;</span>
+            {"    "}<span className="text-gray-500"> &lt;li&gt;</span>
             <span className="text-pink-500">React.js / Next.js</span>
             <span className="text-gray-500">&lt;/li&gt;</span>
             <br />
-            <span className="text-gray-500"> &lt;li&gt;</span>
+            {"    "}<span className="text-gray-500"> &lt;li&gt;</span>
             <span className="text-pink-500">Node.js</span>
             <span className="text-gray-500">&lt;/li&gt;</span>
             <br />
-            <span className="text-gray-500"> &lt;li&gt;</span>
+            {"    "}<span className="text-gray-500"> &lt;li&gt;</span>
             <span className="text-pink-500">Vite / Webpack</span>
             <span className="text-gray-500">&lt;/li&gt;</span>
             <br />
-            <span className="text-gray-500"> &lt;li&gt;</span>
+            {"    "}<span className="text-gray-500"> &lt;li&gt;</span>
             <span className="text-pink-500">Git / CI / CD</span>
             <span className="text-gray-500">&lt;/li&gt;</span>
-            <div className="text-gray-500"> &lt;/ul&gt;</div>
+            <div className="text-gray-500">{"   "}&lt;/ul&gt;</div>
             <div className="text-gray-500"> &lt;/div&gt;</div>
             <div className="text-gray-500">&lt;/header&gt;</div>
           </code>

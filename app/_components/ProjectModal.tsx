@@ -1,14 +1,10 @@
 "use client";
 import { useEffect } from "react";
-import { X, ExternalLink, Github } from "lucide-react";
+import { X, ExternalLink, GithubIcon } from "lucide-react";
 import Link from "next/link";
+import type { ProjectDetails } from "@/app/_data/projects";
 
-export type ProjectDetails = {
-  problem: string;
-  solution: string;
-  techDetails: string;
-  features: string[];
-};
+export type { ProjectDetails };
 
 type ProjectModalProps = {
   title: string;
@@ -32,20 +28,27 @@ const ProjectModal = ({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
+    // iOS Safari compatible scroll lock
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
     };
   }, [onClose]);
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in"
       onClick={onClose}
     >
       <div
-        className="modal-scroll bg-gray-900 rounded-2xl w-full max-w-2xl flex flex-col gap-6 p-6 md:p-8 relative max-h-[90vh] overflow-y-auto"
+        className="modal-scroll modal-enter bg-gray-900 rounded-2xl w-full max-w-2xl flex flex-col gap-6 p-6 md:p-8 relative max-h-[90vh] overflow-y-auto overscroll-contain"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -135,7 +138,7 @@ const ProjectModal = ({
               rel="noopener noreferrer"
               className="flex items-center gap-2 border border-gray-600 text-gray-300 font-semibold text-sm px-4 py-2 rounded-xl hover:border-primary hover:text-primary transition-colors"
             >
-              <Github size={14} /> View code
+              <GithubIcon size={14} /> View code
             </Link>
           )}
         </div>
