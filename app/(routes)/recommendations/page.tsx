@@ -2,8 +2,8 @@ import React from "react";
 import { Quote, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Avatar from "../../../public/avatar.jpeg";
-import MattLaw from "../../../public/matt_law.jpg";
-import JamesLewis from "../../../public/james_lewis.jpg";
+import MattLaw from "../../../public/james_lewis.jpg";
+import JamesLewis from "../../../public/matt_law.jpg";
 import Link from "next/link";
 
 const recommendations = [
